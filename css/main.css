@@ -1,0 +1,741 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,700&display=swap');
+html {
+    font-size: 70%;
+    scroll-behavior: smooth;
+}
+
+body {
+    padding: 3rem;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.icon {
+    width: 30px;
+    height: 27px;
+    position: fixed;
+    left: 10%;
+    top: 10%;
+    z-index: 10;
+    cursor: pointer;
+}
+
+.icon span {
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 5px;
+    position: absolute;
+}
+
+.icon span:nth-child(2) {
+    top: 13px;
+    width: 70%;
+    margin-left: auto;
+    position: absolute;
+}
+
+.icon span:nth-child(3) {
+    top: 26px;
+    width: 100%;
+    margin-left: auto;
+    position: absolute;
+}
+
+.fixed-nav {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(to right bottom, #b34629, hsl(12, 47%, 49%));
+    display: grid;
+    place-items: center;
+    clip-path: circle(10% at -30% -15%);
+    transition: clip-path 2000ms ease 500ms;
+    z-index: 10;
+}
+
+.fixed-nav.show {
+    clip-path: circle(75%);
+    transition: clip-path 2000ms ease;
+}
+
+.fixed-nav a {
+    color: #fff;
+}
+
+.fixed-nav.show .close-icon {
+    transform: translateX(0);
+    transition: transform 750ms ease 1500ms;
+}
+
+.fixed-nav ul {
+    text-align: center;
+}
+
+.fixed-nav li {
+    font-size: 2rem;
+    margin: 2rem 0;
+}
+
+.close-icon {
+    position: absolute;
+    width: 30px;
+    height: 27px;
+    left: 10%;
+    top: 10%;
+    cursor: pointer;
+    transform: translateX(75px);
+    transition: transform 500ms ease 125ms;
+}
+
+.close-icon span {
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.close-icon span:first-child {
+    transform: rotate(45deg);
+}
+
+.close-icon span:last-child {
+    transform: rotate(-45deg);
+}
+
+header {
+    background-image: linear-gradient(to right bottom, #b34629d9, hsla(12, 47%, 49%, 0.6)), url(../images/banner.jpg);
+    height: 95vh;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 0;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+}
+
+.banner-details {
+    text-align: center;
+    padding: 8em 2em 2em 2em;
+    color: #fff;
+}
+
+.banner-details h1 {
+    margin-top: 2em;
+    font-size: 75px;
+    font-weight: bold;
+    letter-spacing: 1rem;
+    background: -webkit-linear-gradient(#fff, #FF9800);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.banner-details h3 {
+    margin-top: 1em;
+    font-size: 3.5rem;
+    font-weight: 600;
+    letter-spacing: 0.3rem;
+}
+
+.strength-section {
+    background: #EDE9D0;
+    padding: 28rem 0;
+    margin-top: -22vh;
+}
+
+.strength-heading {
+    margin-bottom: 8rem;
+}
+
+.strength-heading h2 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #BC4424;
+}
+
+.button {
+    display: inline-block;
+    text-transform: uppercase;
+    padding: 20px 30px;
+    border-radius: 5px;
+    box-shadow: 0px 17px 10px -10px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    -webkit-transition: all ease-in-out 300ms;
+    transition: all ease-in-out 300ms;
+}
+
+.button:hover {
+    box-shadow: 0px 37px 20px -20px rgba(0, 0, 0, 0.2);
+    -webkit-transform: translate(0px, -10px) scale(1.2);
+    transform: translate(0px, -10px) scale(1.2);
+}
+
+.strength-content {
+    margin-bottom: 2em;
+    text-align: left;
+    color: #504f46;
+}
+
+.strength-content h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.strength-content p {
+    font-size: 1.5rem;
+}
+
+.strength-frame {
+    position: relative;
+}
+
+.strength-box {
+    padding: 2em;
+}
+
+.strength_photo {
+    width: 55%;
+    position: absolute;
+    transition: all 1s;
+    box-shadow: 0 1.5rem 4rem #848484;
+    outline-offset: 2rem;
+}
+
+.strength_photo:hover {
+    z-index: 10;
+    outline: 1.5rem solid #b34629d9;
+    transform: scale(1.05) translateY(-0.5rem);
+}
+
+.frame-1 {
+    left: 0;
+    top: -2rem;
+    z-index: 2;
+}
+
+.frame-2 {
+    right: 0;
+    top: 3rem;
+    z-index: 3;
+}
+
+.frame-3 {
+    left: 10%;
+    top: 10rem;
+    z-index: 4;
+}
+
+.services-section {
+    background-image: linear-gradient(to right bottom, #b34629d9, hsla(12, 47%, 49%, 0.6)), url(../images/services.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 30rem 0;
+    transform: skewY(-7deg);
+    margin-top: -12rem;
+}
+
+.services-heading {
+    margin-bottom: 8rem;
+}
+
+.services-heading h2 {
+    font-size: 3.5rem;
+    transform: skewY(7deg);
+    font-weight: 700;
+    color: #fff;
+}
+
+.services-box {
+    padding: 2rem;
+    background: rgb(0, 0, 0, 0.3);
+    text-align: center;
+    border-radius: 3px;
+    transition: all 0.3s;
+}
+
+.services-box:hover {
+    transform: translateY(-1.5rem) scale(1.03);
+}
+
+.services-box h3 {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 2rem;
+}
+
+.services-box p {
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.services-box i {
+    font-size: 8rem;
+    font-weight: lighter;
+    color: #fff;
+    margin-bottom: 2rem;
+}
+
+.services-section .container {
+    transform: skewY(7deg);
+}
+
+
+/*Process-heading*/
+
+.process-section {
+    background: #EDE9D0;
+    padding: 32rem 0 14rem 0;
+    margin-top: -21vh;
+}
+
+.process-heading {
+    margin-bottom: 8rem;
+}
+
+.process-heading h2 {
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #BC4424;
+}
+
+.process-box {
+    background: #ffffff;
+    position: relative;
+    width: 335px;
+    max-width: 100%;
+    border-radius: 10px 100px 70px 70px;
+    height: 50rem;
+    padding: 30px 10px 40px 20px;
+}
+
+.process-box h3 {
+    font-size: 2rem;
+    margin-top: 3rem;
+    font-weight: bold;
+}
+
+.process-box p {
+    font-size: 1.5rem;
+    padding-top: 4rem;
+    margin-top: 6rem;
+}
+
+.process-img {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 0;
+    box-shadow: 0 0 80px rgba(0, 0, 0, 0.2);
+    border-radius: 10em;
+    transition: all ease-in-out 300ms;
+}
+
+.process-img:hover {
+    box-shadow: 0px 37px 20px -20px rgba(0, 0, 0, 0.2);
+    -webkit-transform: translate(0px, -10px) scale(1.2);
+    transform: translate(0px, -10px) scale(1.2);
+}
+
+.button {
+    background: #BC4424;
+    padding: 1rem 2rem;
+    font-weight: 700;
+    font-size: 1.6rem;
+    border-radius: 3rem;
+    position: relative;
+    color: #fff;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #fff;
+}
+
+.product-btn {
+    margin-top: 10rem;
+    text-align: center;
+}
+
+.last-child {
+    padding: 4rem 0 0 0;
+}
+
+.offer-section {
+    padding: 10rem 0;
+    background: #BC4424;
+}
+
+.offer-heading {
+    margin-bottom: 8rem;
+}
+
+.offer-heading h2 {
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.offer-card {
+    background: #fff;
+    padding: 1rem;
+    height: 54vh;
+}
+
+.offer-card h3 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-top: 4rem;
+    color: #BC4424;
+    font-weight: 600;
+    font-variant-ligatures: none;
+}
+
+.card-header img {
+    filter: grayscale(1);
+    transition: all ease-in-out;
+}
+
+.card-header img:hover {
+    filter: grayscale(0);
+}
+
+.offer-content {
+    padding: 1rem;
+}
+
+footer {
+    background: #2c2c2c;
+    padding: 3rem 0;
+}
+
+.footer-container {
+    max-width: 90%;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin: 0 auto;
+}
+
+.footer-header h2 {
+    padding: 2rem;
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #BC4424;
+}
+
+.footer-logo-container {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    text-align: center;
+}
+
+.footer-logo {
+    height: 150px;
+    width: auto;
+}
+
+.footer-left {
+    padding-top: 2rem;
+    border-top: 2px solid #BC4424;
+}
+
+.footer-right {
+    padding-top: 2rem;
+    border-top: 2px solid #BC4424;
+}
+
+.footer-left p {
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.footer-right p {
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+
+/*Responsive*/
+
+@media (max-width: 768px) {
+    body {
+        padding: 0;
+    }
+    .banner-details {
+        text-align: center;
+        padding: 10em 2em 2em 2em;
+        color: #fff;
+    }
+    .banner-details h1 {
+        font-size: 50px;
+    }
+    .banner-details h3 {
+        font-size: 35px;
+    }
+    header {
+        height: 65vh;
+        width: 100%;
+        background-size: cover;
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 56vh, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 56vh, 0 100%);
+    }
+    .strength-section {
+        background: #EDE9D0;
+        padding: 21rem 0 51rem 0;
+        margin-top: -19vh;
+    }
+    .strength-heading h2 {
+        font-size: 2.5rem;
+    }
+    .strength-heading {
+        margin-bottom: 4rem;
+    }
+    .strength-box {
+        padding: 1em;
+    }
+    .strength_photo {
+        width: 45%;
+        outline-offset: 1rem;
+    }
+    .frame-1 {
+        left: 0;
+        top: 6rem;
+        z-index: 2;
+    }
+    .frame-2 {
+        right: 0;
+        top: 6rem;
+        z-index: 3;
+    }
+    .frame-3 {
+        left: 28%;
+        top: 1rem;
+        z-index: 4;
+    }
+    .services-section {
+        padding: 9rem 0;
+    }
+    .services-heading h2 {
+        font-size: 2.5rem;
+    }
+    .services-heading {
+        margin-bottom: 4rem;
+    }
+    .process-heading h2 {
+        font-size: 2.5rem;
+    }
+    .process-section {
+        padding: 29rem 0 6rem 0;
+        margin-top: -21vh;
+    }
+    .process-heading {
+        margin-bottom: 4rem;
+    }
+    .offer-section {
+        padding: 5rem 0;
+    }
+    .offer-heading h2 {
+        font-size: 2.5rem;
+    }
+    .offer-card {
+        padding: 1rem;
+        height: 36vh;
+    }
+    .offer-card h3 {
+        font-size: 2rem;
+        margin-top: 3rem;
+    }
+    .footer-header h2 {
+        padding: 2rem;
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 420px) {
+    html {
+        font-size: 100%;
+    }
+    body {
+        padding: 0;
+    }
+    header {
+        height: 95vh;
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    }
+    .fixed-nav li {
+        font-size: 1rem;
+    }
+    .fixed-nav ul {
+        margin-left: -1rem;
+    }
+    .banner-details {
+        padding: 1em 0em 0em 0em;
+    }
+    .banner-details h1 {
+        margin-top: 3em;
+        font-size: 48px;
+        font-weight: bold;
+        letter-spacing: 0.3rem;
+    }
+    .strength-section {
+        background: #EDE9D0;
+        padding: 11rem 0 26rem 0;
+        margin-top: -22vh;
+    }
+    .banner-details h3 {
+        margin-top: 2em;
+        font-size: 1.1rem;
+    }
+    .strength-heading {
+        margin-bottom: 2rem;
+    }
+    .strength-heading h2 {
+        font-size: 2rem;
+    }
+    .frame-1 {
+        left: 0;
+        top: 1rem;
+    }
+    .frame-2 {
+        right: 0;
+        top: 1rem;
+    }
+    .frame-3 {
+        left: 25%;
+        top: 4rem;
+    }
+    .strength_photo {
+        width: 47%;
+        outline-offset: 1rem;
+    }
+    .strength_photo:hover {
+        z-index: 10;
+        outline: 0.5rem solid #b34629d9;
+        transform: scale(1.05) translateY(-0.5rem);
+    }
+    .strength-box {
+        padding: 1em;
+    }
+    .strength-content h3 {
+        text-align: center;
+        font-size: 1.3rem;
+    }
+    .strength-content p {
+        font-size: 1rem;
+    }
+    .services-section {
+        padding: 4rem 0 9rem 0;
+    }
+    .services-heading h2 {
+        font-size: 2rem;
+    }
+    .services-heading {
+        margin-bottom: 2rem;
+    }
+    .services-box {
+        padding: 0.5rem;
+    }
+    .services-box i {
+        font-size: 5rem;
+        margin-bottom: 1rem;
+    }
+    .services-box p {
+        font-size: 1rem;
+    }
+    .services-box h3 {
+        font-size: 1.3rem;
+    }
+    .process-section {
+        padding: 13rem 0 6rem 0;
+    }
+    .process-heading {
+        margin-bottom: 2rem;
+    }
+    .process-heading h2 {
+        font-size: 2rem;
+    }
+    .process-box h3 {
+        font-size: 1.3rem;
+    }
+    .process-box p {
+        font-size: 1rem;
+    }
+    .process-box {
+        height: 35rem;
+    }
+    .product-btn {
+        margin-top: 0rem;
+        text-align: center;
+        padding-top: 4rem;
+    }
+    .last-child {
+        padding: 7rem 0;
+    }
+    .button {
+        padding: 0.7rem 1.3rem;
+        font-size: 1rem;
+    }
+    .offer-section {
+        padding: 4rem 0;
+        background: #BC4424;
+    }
+    .offer-heading {
+        margin-bottom: 2rem;
+    }
+    .offer-heading h2 {
+        font-size: 1.9rem;
+        font-weight: 700;
+    }
+    .offer-card {
+        padding: 0rem;
+        height: 54vh;
+    }
+    .offer-content {
+        padding: 0rem;
+    }
+    .offer-card h3 {
+        font-size: 1.2rem;
+        margin-top: 3rem;
+    }
+    .footer-header h2 {
+        padding: 0rem;
+        font-size: 2rem;
+    }
+    .footer-container {
+        max-width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin: 0 auto;
+    }
+    .footer-left p {
+        font-size: 1rem;
+    }
+    .footer-right p {
+        font-size: 1rem;
+    }
+}
+
+
+/*Responsive*/
+
+@media (max-width: 600px) {
+    .navbar ul {
+        display: none;
+    }
+    .icon {
+        display: flex;
+    }
+}
